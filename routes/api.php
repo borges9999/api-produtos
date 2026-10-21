@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ProdutoController;
 use Illuminate\Support\Facades\Http;
 
 Route::get('/usuarios-externos', function () {
@@ -15,3 +16,5 @@ Route::get('/usuarios-externos', function () {
 
     return response()->json($resposta->json());
 });
+
+Route::apiResource('produtos', ProdutoController::class);
